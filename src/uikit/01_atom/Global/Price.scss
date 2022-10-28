@@ -1,0 +1,33 @@
+/**
+* 공통 > 금액표기(상담접수 포함 , 환단위 포함)
+* @auther : Dstyle
+*/
+.a-price{display:flex;align-items:flex-end;
+    >strong{color:#333;font-weight:700;font-size:18px;line-height:18px;}
+    &:not(.-rental):after{content:"원";color:#666;font-size:12px;line-height:14px;font-weight:400;} // 렌탈이 아니라면 환표기
+
+    // type modifier
+    &.-recurrent:before{content:"월";color:#333;font-size:12px;line-height:14px;font-weight:400;} // 월 자동결제시 표시
+
+    // size modifier
+    &.-xs{
+        >strong{font-size:12px;line-height:14px;}
+    }
+    &.-sm{
+        >strong{font-size:15px;line-height:16px;}
+    }
+    &.-lg{
+        >strong{font-size:20px;line-height:20px;}
+    }
+    &.-xl{
+        >strong{font-size:24px;line-height:24px;}
+    }
+
+    // isOptions modifier
+    &.-options:after{content:"원~";}
+
+    // isDelete modifier
+    &.-delete{text-decoration:line-through;
+        strong{font-weight:400;}
+    }
+}

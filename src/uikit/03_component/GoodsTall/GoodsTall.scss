@@ -1,0 +1,8 @@
+/* [C] 전시 > 긴상품(m-goodsTall) 표시목록(가로 스크롤 + 더보기) */
+.c-goodsTalls{display:flex;width:100%;overflow-x:auto;overflow-y:hidden;-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory}
+.c-goodsTalls:after{display:block;padding-right:10px;content:""}
+.c-goodsTalls::-webkit-scrollbar{display:none;height:0}
+.c-goodsTalls::-webkit-scrollbar-thumb{height:0}
+.c-goodsTalls .c-goodsTalls__more,.c-goodsTalls .m-goodsTall{margin-left:10px;flex:0 0 130px;-ms-scroll-snap-align:start;scroll-snap-align:start}
+.c-goodsTalls .c-goodsTalls__more a{display:block}
+.c-goodsTalls .c-goodsTalls__more img{width:100%;height:auto}

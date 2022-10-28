@@ -1,0 +1,20 @@
+/* [M] 전시 > 카드형 베너목록(가로스크롤 + 더보기) */
+.m-goodsTall{min-height:255px;width:130px;
+    *{letter-spacing:-.05em}
+}
+.m-goodsTall__poster{display:block;position:relative;width:100%;height:175px;overflow:hidden;border-radius:10px;background:#f6f6f6 url(//img.publichs.com/ECMCFO/mc_images/common/noimg/bgNoimg200x200.gif) no-repeat center center;background-size:80px auto}
+.m-goodsTall__poster figure img{width:100%;height:auto}
+.m-goodsTall__poster .a-liveLabel,.m-goodsTall__poster .a-viewLabel{position:absolute;top:5px;left:5px}
+.m-goodsTall__poster .a-liveStreamingInfo{position:absolute;right:5px;bottom:5px}
+.m-goodsTall__info{padding-top:5px}
+.m-goodsTall__info .a-goodsName{height:39px;font-size:13px;line-height:18px}
+/*
+.m-goodsTall .a-goodsPrice{display:flex;flex-wrap:wrap}
+.m-goodsTall .a-goodsPrice *{font-size:15px;line-height:15px}
+.m-goodsTall .a-goodsPrice .a-price{display:flex}
+.m-goodsTall .a-goodsPrice .a-price .a-price__unit{margin-top:1px;margin-left:1px;font-size:12px}
+.m-goodsTall .a-goodsPrice .a-price .a-price__prices{margin-top:1px;margin-left:0}
+.m-goodsTall .a-goodsPrice .a-goodsPrice__price{margin-left:2px}
+.m-goodsTall .a-goodsPrice .a-goodsPrice__origin{margin-top:2px;width:100%;font-size:12px}
+.m-goodsTall .a-goodsPrice .a-goodsPrice__origin .a-price{color:#666}
+*/

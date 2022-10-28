@@ -1,0 +1,8 @@
+/* [A] 전시 > 상품  > 상품가격표시 */
+.a-goodsPrice{display:flex;align-items:flex-end;
+    &__discountPercent{font-weight:700;font-size:18px;line-height:18px;color:#f52739;}
+    &__discountPercent + &__price{margin-left:5px;}
+    &__price + &__origin{margin-left:5px;}
+    &__origin{color:#666;}
+    &.-rental .a-goodsPrice__price:after{content:"";} // 상담접수상품인경우, 환표기 삭제
+}
