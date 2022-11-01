@@ -8,26 +8,20 @@ export interface Props {
     modifier?:string,
     goodsName?:string,
     goodsPrice?:number,
-    goodsOrigin?:number,
-    vodViews?:string,
-    goodsNo?:string,
-    bnrExt?:string
+    vodViews?:number,
+    posterSrc?:string
 }
 const props = withDefaults(defineProps<Props>(), {
     modifier:"",
     goodsName:"상품명 영역", 
     goodsPrice:0, 
-    goodsOrigin:0,
-    vodViews:"xxxx..",
-    goodsNo:"xxxx",
-    bnrExt:"jpg"
+    vodViews:0,
 });
 const emit = defineEmits(["posterLink","infoLink"]); // 부모에게서 이벤트 가져오기
 
 
 // data
 const modifierClass = (props.modifier) ? " -"+props.modifier : ""; // 수정자 클래스
-const posterSrc = `https://img.publichs.com/MLC/brc/${props.goodsNo}/thumbnail.${props.bnrExt}` // 이미지 경로
 
 
 // Methods
@@ -42,15 +36,15 @@ function infoLink(){
 }
 </script>
 <template>
-    <article :class="'m-goodsTall'+modifierClass">
+    <article :class="'m-goodsTall'+modifierClass"> 
         <a @click="posterLink" class="m-goodsTall__poster">
             <figure><img :alt="goodsName" class="-originToCdnReady -originToCdn -originToCdnComplete" :src="posterSrc"></figure>
-            <A_ViewLabel :count="vodViews+''"></A_ViewLabel>
+            <A_ViewLabel :count="vodViews"></A_ViewLabel>
             <A_LiveStreamingInfo></A_LiveStreamingInfo>
         </a>
         <a @click="infoLink" class="m-goodsTall__info">
-            <A_GoodsName :text="goodsName"></A_GoodsName>
-            <A_GoodsPrice :price="goodsPrice" :origin="goodsOrigin"></A_GoodsPrice>
+            <A_GoodsName :text="goodsName" :rows="2"></A_GoodsName>
+            <A_GoodsPrice :price="goodsPrice" type="deal"></A_GoodsPrice>
         </a>
     </article>
 </template>

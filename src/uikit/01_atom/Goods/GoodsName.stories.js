@@ -7,10 +7,13 @@ export default {
     text:{
       description:"상품명"
     },
+    rows:{
+      description:`상품명이 표시될 영역의 줄수(1~3 까지),<br />4이상의 경우 무제한(auto)로 적용`
+    },
     labels:{
       description:`상품태그연결,배열 내 순서대로 적용됨 :<br />
-      'tvGoods': TV상품
-      'mobilelive' : 공영라방
+      'tvGoods': TV상품<br />
+      'mobilelive' : 공영라방<br />
       'traditional' : 전통시장`
     }
   },

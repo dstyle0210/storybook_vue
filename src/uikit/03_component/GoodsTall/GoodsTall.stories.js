@@ -18,12 +18,6 @@ const Template = (args) => ({
   template: '<goods-tall v-bind="args" />',
 });
 
-export const 기본템플릿 = Template.bind({});
-기본템플릿.args = {
-  modifier:"storybook",
-  list:[{}]
-};
-
 import MOCK_list from "../../../mock/labang.json";
 const list = MOCK_list.prdList.map((mock) => {
   return {
@@ -36,8 +30,16 @@ const list = MOCK_list.prdList.map((mock) => {
       vodViews:mock.suppId
   };
 });
-export const 데이터표시 = Template.bind({});
-데이터표시.args = {
+
+export const 기본템플릿 = Template.bind({});
+기본템플릿.args = {
   modifier:"storybook",
   list:list
+  
+};
+
+export const 데이터없음 = Template.bind({});
+데이터없음.args = {
+  modifier:"storybook",
+  list:[]
 };
