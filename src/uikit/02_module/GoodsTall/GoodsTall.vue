@@ -25,13 +25,13 @@ const modifierClass = (props.modifier) ? " -"+props.modifier : ""; // 수정자 
 
 
 // Methods
-function posterLink(){
-    emit("posterLink","포스터");
-    console.log("포스터");
+function posterLink(e:any){
+    alert("posterLink");
+    emit("posterLink","emit.module.posterLink");
 }
-function infoLink(){
-    emit("infoLink","인포");
-    console.log("인포");
+function infoLink(e:any){
+    alert("infoLink");
+    emit("infoLink","emit.module.infoLink");
     // props.click(); // props 에서 전달 받은 이벤트 실행
 }
 </script>
@@ -49,5 +49,5 @@ function infoLink(){
     </article>
 </template>
 <style lang="scss">
-@import "./GoodsTall.scss"; 
+@import "./GoodsTall.scss";
 </style>
