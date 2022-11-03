@@ -9,7 +9,7 @@ endT.setSeconds(endT.getSeconds() + 7000);
   <main>
     
     <LiveStreamingInfo type="null" :endTime="endT"></LiveStreamingInfo>
-    <LiveStreamingInfo type="time" :time="endT"></LiveStreamingInfo>
+    <LiveStreamingInfo type="time"></LiveStreamingInfo>
     <LiveStreamingInfo type="countdown" :endTime="endT"></LiveStreamingInfo>
     <LiveStreamingInfo type="refresh" :endTime="endT"></LiveStreamingInfo>
 
