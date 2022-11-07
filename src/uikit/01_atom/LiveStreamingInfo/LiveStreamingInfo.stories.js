@@ -12,7 +12,7 @@ export default {
         countdown:"props.endTime까지 남은시간 표시, 이후 '종료' 표시 됨",
         refresh:"props.endTime까지 남은시간 표시, 이후 '새로고침' 표시 됨"
     }),
-    time:createType("표시할 시간",`number(ms) | string ("HH:MM:SS")`),
+    time:createType("표시할 시간","Date | number(seconds) | string ('HH:MM:SS')"),
     dueDate:createType("마감시간",`Date | string ("YYYY-MM-DD HH:MM:SS")`)
   }
 }

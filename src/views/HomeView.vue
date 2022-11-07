@@ -1,17 +1,25 @@
 <script setup lang="ts">
 import LiveStreamingInfo from "../uikit/01_atom/LiveStreamingInfo/LiveStreamingInfo.vue";
 const endT = new Date();
-endT.setSeconds(endT.getSeconds() + 7000);
+endT.setSeconds(endT.getSeconds() + 7);
+
+const time0 = new Date();
+const time1 = 70000; // 초 단위
+const time2 = "21:10:10";
 </script>
 
 <template>
   <header>헤더</header>
   <main>
     
-    <LiveStreamingInfo type="null" :endTime="endT"></LiveStreamingInfo>
-    <LiveStreamingInfo type="time"></LiveStreamingInfo>
-    <LiveStreamingInfo type="countdown" :endTime="endT"></LiveStreamingInfo>
-    <LiveStreamingInfo type="refresh" :endTime="endT"></LiveStreamingInfo>
+    <LiveStreamingInfo type="null"></LiveStreamingInfo>
+    
+    <LiveStreamingInfo type="time" :time="time0"></LiveStreamingInfo>
+    <LiveStreamingInfo type="time" :time="time1"></LiveStreamingInfo>
+    <LiveStreamingInfo type="time" :time="time2"></LiveStreamingInfo>
+
+    <LiveStreamingInfo type="countdown" :dueDate="endT"></LiveStreamingInfo>
+    <LiveStreamingInfo type="refresh" :dueDate="endT"></LiveStreamingInfo>
 
   </main>
   <footer>풋터</footer>

@@ -25,12 +25,7 @@ export const createTypeSelect = (description,options) => {
     table:{
       type:{
           summary:`${makeSummary( Object.keys(options) )}`,
-          labels:[{
-            ArrowUp: 'Up',
-            ArrowDown: 'Down',
-            ArrowLeft: 'Left',
-            ArrowRight: 'Right',
-          }]
+          detail:makeDetail(options)
         }
     }
   }
