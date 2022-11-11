@@ -6,7 +6,9 @@ export interface Props {
     dueDate?:Date|string // YYYY-MM-DD HH:MM:SS
 }
 const props = withDefaults(defineProps<Props>(), {
-    type:"null"
+    type:"null",
+    time:0,
+    dueDate:()=>new Date()
 });
 const modifierClass = ref("");
 
@@ -63,6 +65,7 @@ const _text = computed(() => {
     if(props.type=="time") {
         return getTimeText(_time.value); // 받은시간 그대로 넘김
     }
+    console.log(_dueDate.value);
     let gap = _dueDate.value - _now.value;
     if(0<gap){
         return getTimeText(gap); // countdown 및 refresh는 diff 시간으로 표시
@@ -74,9 +77,11 @@ const _text = computed(() => {
 });
 
 onMounted(()=>{
+    console.log("mount");
     const timer = setInterval(()=>{
         _now.value = new Date().getTime();
         let gap = _dueDate.value - _now.value;
+        console.log(gap);
         if(gap<0){
             clearInterval(timer); 
         };
