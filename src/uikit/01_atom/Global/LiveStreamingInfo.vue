@@ -32,7 +32,7 @@ const _time = computed(()=>{
 });
 
 const _dueDate = computed(()=>{
-    const vaildation = new RegExp(/^\d{4}-(0[1-9]|1[0-2])-([0-2]\d|3[01]) (0\d|1\d|2[0-3]):[0-5]\d:[0-5]\d$/);
+    const vaildation = new RegExp(/^\d{4}-(0[1-9]|1[0-2])-([0-2]\d|3[01])[T\s](0\d|1\d|2[0-3]):[0-5]\d:[0-5]\d$/);
     if(props.dueDate instanceof Date){
         return props.dueDate.getTime();
     }else if(typeof props.dueDate == "string" && vaildation.test(props.dueDate)){
@@ -65,7 +65,6 @@ const _text = computed(() => {
     if(props.type=="time") {
         return getTimeText(_time.value); // 받은시간 그대로 넘김
     }
-    console.log(_dueDate.value);
     let gap = _dueDate.value - _now.value;
     if(0<gap){
         return getTimeText(gap); // countdown 및 refresh는 diff 시간으로 표시
@@ -77,11 +76,9 @@ const _text = computed(() => {
 });
 
 onMounted(()=>{
-    console.log("mount");
     const timer = setInterval(()=>{
         _now.value = new Date().getTime();
         let gap = _dueDate.value - _now.value;
-        console.log(gap);
         if(gap<0){
             clearInterval(timer); 
         };

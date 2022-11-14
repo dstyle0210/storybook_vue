@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import A_ViewLabel from "../../01_atom/ViewLabel/ViewLabel.vue";
-import A_LiveStreamingInfo from "../../01_atom/LiveStreamingInfo/LiveStreamingInfo.vue";
+import A_ViewLabel from "../../01_atom/Global/ViewLabel.vue";
+import A_LiveStreamingInfo from "../../01_atom/Global/LiveStreamingInfo.vue";
 import A_GoodsPrice from "../../01_atom/Goods/GoodsPrice.vue";
 import A_GoodsName from "../../01_atom/Goods/GoodsName.vue";
 

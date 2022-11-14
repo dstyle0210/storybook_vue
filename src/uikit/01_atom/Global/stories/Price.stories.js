@@ -2,7 +2,7 @@ import '../../../00_base/reset.scss';
 import {createType} from "../../../../../.storybook/createType.js";
 import Price from "../Price.vue";
 export default { 
-  title: 'UIKIT/Atom/Price',
+  title: 'UIKIT/Atom/Global/Price',
   component: Price,
   argTypes:{
     price:createType("판매가","number"),
@@ -50,15 +50,15 @@ export const 템플릿 = () => ({
 
 
 // 타입별
-import PriceTypePreview from "./Price.TypePreview.vue";
+import PriceTypeStories from "./Price_Type.stories.vue";
 export const 타입별 = () => ({
-  components:{ PriceTypePreview },
-  template:'<price-type-preview />'
+  components:{ PriceTypeStories },
+  template:'<price-type-stories />'
 });
 
 // 사이즈별
-import PricePreviewSize from "./Price.PreviewSize.vue";
+import PriceSizeStories from "./Price_Size.stories.vue";
 export const 사이즈별 = () => ({
-  components:{ PricePreviewSize },
-  template:'<price-preview-size />'
+  components:{ PriceSizeStories },
+  template:'<price-size-stories />'
 })

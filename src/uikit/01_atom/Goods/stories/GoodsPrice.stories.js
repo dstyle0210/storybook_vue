@@ -2,7 +2,7 @@ import '../../../00_base/reset.scss';
 import {createType} from "../../../../../.storybook/createType.js";
 import GoodsPrice from "../GoodsPrice.vue";
 export default { 
-  title: 'UIKIT/Atom/GoodsPrice',
+  title: 'UIKIT/Atom/Goods/GoodsPrice',
   component: GoodsPrice,
   argTypes:{
     price:createType("상품의 판매가","number"),

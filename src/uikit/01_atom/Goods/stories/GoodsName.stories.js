@@ -2,7 +2,7 @@ import '../../../00_base/reset.scss';
 import {createType} from "../../../../../.storybook/createType.js";
 import GoodsName from "../GoodsName.vue";
 export default { 
-  title: 'UIKIT/Atom/GoodsName',
+  title: 'UIKIT/Atom/Goods/GoodsName',
   component: GoodsName,
   argTypes:{
     text:createType(`상품명`,"text"),
@@ -23,8 +23,20 @@ const Template = (args) => ({
   template: '<goods-name v-bind="args" />'
 });
 
-export const Default = Template.bind({});
-Default.args = {
+export const 프로토타입 = Template.bind({});
+프로토타입.args = {
   text:"상품명 영역",
-  labels:["tvGoods"]
+  labels:["tvGoods"],
+  rows:1
 };
+
+export const 템플릿 = () => ({
+  components: { GoodsName },
+  template: `<goods-name text="상품명 영역" :labels="['tvGoods']" :rows="1" />`
+});
+
+import GoodsNameRows from "./GoodsName_Rows.stories.vue";
+export const 표시줄수 = () => ({
+  components: { GoodsNameRows },
+  template: `<goods-name-rows  />`
+});
