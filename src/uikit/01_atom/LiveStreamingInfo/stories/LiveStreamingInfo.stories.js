@@ -3,7 +3,7 @@ import {createType} from "../../../../../.storybook/createType.js";
 import LiveStreamingInfo from "../LiveStreamingInfo.vue";
 
 export default { 
-  title: 'UIKIT/Atom/LiveStreamingInfo2',
+  title: 'UIKIT/Atom/LiveStreamingInfo',
   component: LiveStreamingInfo,
   argTypes:{
     type:createType("방송시간라벨 표시방법","select",{
@@ -34,6 +34,7 @@ export const 시간만표시 = Template.bind({});
 시간만표시.args = {
   type:"time"
 };
+
 const endT = new Date();
 endT.setSeconds(endT.getSeconds() + 7);
 export const 카운트다운 = Template.bind({});

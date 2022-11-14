@@ -5,13 +5,9 @@ export default {
   title: 'UIKIT/Atom/GoodsPrice',
   component: GoodsPrice,
   argTypes:{
-    price:{
-      description:"상품의 판매가"
-    },
-    origin:{
-      description:`상품의 정상가(할인이전)`
-    },
-    type:createType("표시될 가격 형식",{
+    price:createType("상품의 판매가","number"),
+    origin:createType("상품의 정상가(할인이전)","number"),
+    type:createType("표시될 가격 형식","select",{
       discount:"할인가 표시",
       deal:"판매가 표시",
       rental:"상담접수상품",
@@ -19,9 +15,10 @@ export default {
       "hidden-discount":"할인가 형식 + 가격숨김처리(??,???원)",
       "hidden-deal":"판매가 형식 + 가격숨김처리(??,???원)"
     }),
-    isOptions:{
-      description:`옵션가격 적용(true시 금액 뒤에 ~ 붙음)`
-    }
+    isOptions:createType("옵션가격 적용여부","boolean",{
+      "true":"금액뒤에 ~ 붙음",
+      "false":"금액뒤에 ~ 안붙음"
+    })
   },
 }
 
@@ -33,8 +30,10 @@ const Template = (args) => ({
   template: '<goods-price v-bind="args" />'
 });
 
-export const 기본형태 = Template.bind({});
-기본형태.args = {
+export const Default = Template.bind({});
+Default.args = {
   price:9000,
-  origin:10000
+  type:"deal",
+  origin:10000,
+  isOptions:false
 };

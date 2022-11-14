@@ -30,11 +30,11 @@ export const createType = (description,controlType,typeOptions) => {
       control: { type: controlType }
     };
     if(typeof typeOptions=="object"){
-      type.control = Object.assign(type.control,typeOptions,{
+      let a = Object.assign(type.control,{
         min:0,
         max:999999,
         step:1
-      });
+      },typeOptions);
       type.table = {
         type:{
             summary:typeOptions.summary
@@ -46,6 +46,14 @@ export const createType = (description,controlType,typeOptions) => {
             summary:typeOptions
         }
       };
+    };
+    return type;
+  }
+
+  if(controlType=="boolean"){ // 컨트롤타입이 boolean 
+    let type = {
+      description:description,
+      control: { type: 'boolean' }
     };
     return type;
   }
@@ -68,6 +76,11 @@ export const createType = (description,controlType,typeOptions) => {
         }
       });
     };
+
+
+
+
+
     return type;
   }
 }
