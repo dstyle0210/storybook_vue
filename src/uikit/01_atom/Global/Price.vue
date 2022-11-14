@@ -3,13 +3,13 @@ import {computed} from "vue";
 export interface Props {
     price:number, // 판매가
     type?:"normal"|"rental"|"recurrent"|"hidden", // 표시형식
-    size?:""|"xs"|"sm"|"nm"|"lg"|"xl",
+    size?:"xs"|"sm"|"nm"|"lg"|"xl",
     isOptions?:boolean,
     isDelete?:boolean
 }
 const props = withDefaults(defineProps<Props>(), {
     type:"normal",
-    size:"",
+    size:"nm",
     isOptions:false,
     isDelete:false
 });
