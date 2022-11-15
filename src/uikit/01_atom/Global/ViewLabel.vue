@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<Props>(), {
     count:0
 });
 
-const _count = computed(()=>{
+const _count = computed(()=>{ 
     if(props.count<0){
         return "0";
     }else if(9999 < props.count){
@@ -26,4 +26,4 @@ const _count = computed(()=>{
 </template>
 <style lang="scss">
 @import "./ViewLabel.scss";
-</style>
+</style> 

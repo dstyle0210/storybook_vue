@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed} from "vue";
-import M_GoodsTall from "../../02_module/GoodsTall/GoodsTall.vue";
+import M_GoodsTall from "../../02_module/Goods/GoodsTall.vue";
 export interface Props {
     list:{
         origin:Object,

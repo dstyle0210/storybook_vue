@@ -9,8 +9,10 @@ export const createType = (description,controlType,typeOptions) => {
   if(!controlType){
     return {description:description}; // 컨트롤 타입이 없으면 설명문구만 넘기고, 나머지는 스토리북 자동설정에 따른다.
   }
+
+  let type = {description:description};
   if(controlType=="text"){ // 컨트롤타입이 text 라면, typeOptions 는 summary로 
-    let type = {
+    type = {
       description:description,
       control: { type: 'text' }
     };
@@ -25,7 +27,7 @@ export const createType = (description,controlType,typeOptions) => {
   }
 
   if(controlType=="number" || controlType=="range"){ // 컨트롤타입이 "number"|"range" 면, typeOptions 은 {min:number,max:number:step:number} 로 바라봄
-    let type = {
+    type = {
       description:description,
       control: { type: controlType }
     };
@@ -51,7 +53,7 @@ export const createType = (description,controlType,typeOptions) => {
   }
 
   if(controlType=="boolean"){ // 컨트롤타입이 boolean 
-    let type = {
+    type = {
       description:description,
       control: { type: 'boolean' }
     };
@@ -61,7 +63,7 @@ export const createType = (description,controlType,typeOptions) => {
   const enums = ["radio","inline-radio","check","inline-check","select","multi-select"];
   let enumsType = enums.filter(_enum => _enum == controlType); // 컨트롤타입이 enums 중에 하나면, typeOptions 은 내가 만든(;;) options 로 바라봄
   if(enumsType.length){
-    let type = {
+    type = {
       description:description,
       control: { type: controlType }
     };
@@ -76,11 +78,18 @@ export const createType = (description,controlType,typeOptions) => {
         }
       });
     };
-
-
-
-
-
+    return type;
+  }
+  if(controlType=="object"){
+    type = {
+      description:description,
+      control: "object"
+    };
+    type.table = {
+      type:{
+          summary:typeOptions
+      }
+    };
     return type;
   }
 }

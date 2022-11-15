@@ -30,53 +30,21 @@ const Template = (args) => ({
   template: '<goods-price v-bind="args" />'
 });
 
-export const Default = Template.bind({});
-Default.args = {
+export const 프로토타입 = Template.bind({});
+프로토타입.args = {
   price:9000,
   type:"deal",
   origin:10000,
   isOptions:false
 };
 
-
-export const 최대금액 = () => ({
+export const 템플릿 = () => ({
   components: { GoodsPrice },
-  setup() {
-    return { args:{
-      price:1000000,
-      type:"discount",
-      origin:2000000,
-      isOptions:true
-    } };
-  },
-  template: '<goods-price v-bind="args" />'
+  template: `<goods-price type="discount" :price="1000" :origin="2000" :isOptions="false"  />`
 });
 
-export const 할인가표시 = () => ({
-  components: { GoodsPrice },
-  template: '<goods-price type="discount" :price="1000" :origin="2000" />'
+import GoodsPriceTypeStories from "./GoodsPrice_Type.stories.vue";
+export const 타입별 = () => ({
+  components: { GoodsPriceTypeStories },
+  template: `<goods-price-type-stories  />`
 });
-
-export const 상담접수상품 = Template.bind({});
-상담접수상품.args = {
-  type:"rental"
-};
-
-export const 월결제상품 = Template.bind({});
-월결제상품.args = {
-  price:1000,
-  type:"recurrent"
-};
-
-export const 금액숨김판매가 = Template.bind({});
-금액숨김판매가.args = {
-  price:1000,
-  type:"hidden-deal"
-};
-
-export const 금액숨김할인가 = Template.bind({});
-금액숨김할인가.args = {
-  price:1000,
-  origin:2000,
-  type:"hidden-discount"
-};
